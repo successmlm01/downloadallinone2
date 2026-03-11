@@ -1,5 +1,5 @@
 {
-  "name": "downloadallinone2",
+  "name": "downloadallinone",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "16.1.6",
+    "next": "15.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
