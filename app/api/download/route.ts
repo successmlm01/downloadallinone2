@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const response = await fetch(`${BACKEND_URL}/download`, {
+    const response = await fetch(`${BACKEND_URL}/info`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url }),
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("Backend fetch error:", err)
     return NextResponse.json(
-      { error: "Could not reach download server" },
+      { error: "Impossible de contacter le serveur" },
       { status: 502 }
     )
   }
