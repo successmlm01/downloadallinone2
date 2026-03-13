@@ -1,1 +1,328 @@
+export type Lang = "en" | "fr" | "ar"
 
+export const translations = {
+  en: {
+    dir: "ltr",
+    nav: {
+      logo: "DownloadAllInOne",
+      youtube: "YouTube",
+      tiktok: "TikTok",
+      instagram: "Instagram",
+      facebook: "Facebook",
+    },
+    hero: {
+      badge: "Free video downloader · No sign-up required",
+      title: ["Download", "any video,", "anywhere"],
+      sub: "YouTube, TikTok, Instagram, Facebook — in HD, 1080p or 4K with audio. Paste the link, pick the quality, done.",
+    },
+    stats: [
+      { v: "4",    l: "Platforms"  },
+      { v: "4K",   l: "Max quality" },
+      { v: "100%", l: "Free"        },
+      { v: "0",    l: "Sign-up"     },
+    ],
+    tool: {
+      sectionLabel: "Choose platform",
+      inputLabel: "Video link",
+      analyzeBtn: "Analyze",
+      analyzingBtn: "…",
+      loadingText: "Fetching formats…",
+      qualityLabel: "Choose quality",
+      downloadBtn: (q: string) => `↓ Download in ${q} (video + audio)`,
+      errorPrivate: "💡 Only <strong>public</strong> videos can be downloaded.",
+    },
+    platforms: [
+      { badge: "4K · HD · MP4",   longdesc: "Download any YouTube video in HD, 1080p Full HD or 4K Ultra HD with merged audio. Supports YouTube Shorts.",                                    tags: ["4K Ultra HD","1080p Full HD","720p HD","Audio included","Shorts"],         cta: "Go to dedicated page →" },
+      { badge: "No watermark",    longdesc: "Download TikTok videos without the @username watermark in high quality. Perfect for saving your favourite creations.",                          tags: ["No watermark","HD","Original sound","Mobile friendly"],                   cta: "Go to dedicated page →" },
+      { badge: "Reels · IGTV",    longdesc: "Download Instagram Reels, classic videos and IGTV in HD directly from your browser.",                                                          tags: ["Reels","IGTV","Videos","HD","Audio included"],                            cta: "Go to dedicated page →" },
+      { badge: "Videos · Reels",  longdesc: "Download public Facebook videos, Facebook Reels and live replays in SD or HD.",                                                               tags: ["Videos","Reels","Lives","SD & HD"],                                       cta: "Go to dedicated page →" },
+    ],
+    how: {
+      heading: "How does it work?",
+      sub: "4 simple steps to download any video in under a minute.",
+      steps: [
+        { n:"01", title:"Copy the link",    desc:"Go to YouTube, TikTok, Instagram or Facebook. Open the video and copy its URL from the address bar or Share button." },
+        { n:"02", title:"Paste & analyze", desc:"Come back here, paste the link in the field above and click Analyze. The platform is detected automatically." },
+        { n:"03", title:"Pick quality",    desc:"Select the resolution you want from all available qualities: 720p, 1080p, 4K depending on the video." },
+        { n:"04", title:"Download",         desc:"Click Download. The MP4 file with audio saves directly to your device in seconds." },
+      ],
+    },
+    features: {
+      heading: "Everything you need",
+      sub: "A simple, fast and complete tool to download videos from the 4 major platforms.",
+      items: [
+        { icon:"🎬", title:"Up to 4K Ultra HD",      desc:"Download in 360p, 720p HD, 1080p Full HD or 4K depending on the original quality. The best format is suggested automatically." },
+        { icon:"🔊", title:"Video + audio merged",   desc:"Every download includes the synchronised audio track. No more silent videos or separate files to merge." },
+        { icon:"🚫", title:"TikTok without watermark",desc:"Automatically removes the TikTok @username watermark for a clean video ready to share." },
+        { icon:"⚡", title:"Analysis in 5 seconds",  desc:"Our dedicated infrastructure fetches metadata and available formats in seconds, with no waiting." },
+        { icon:"📱", title:"All devices",            desc:"Works on iPhone, Android, Mac, Windows and Linux directly from the browser. No app to install." },
+        { icon:"🔒", title:"100% private",           desc:"No account required, no data stored. Your downloads stay between you and your device." },
+        { icon:"🌐", title:"4 platforms",            desc:"YouTube, TikTok, Instagram and Facebook in one tool. Paste any link and we handle the rest." },
+        { icon:"💯", title:"Free & unlimited",       desc:"No subscription, no quota. Download as many videos as you want, free, forever." },
+      ],
+    },
+    platformsDetail: {
+      heading: "Dedicated pages per platform",
+      sub: "Each platform has its own specialised page with a full guide and optimised options.",
+    },
+    article: {
+      heading: "Complete guide — Download videos in 2026",
+      blocks: [
+        { h:"What is DownloadAllInOne?", p:"DownloadAllInOne is a free online tool that lets you download videos from YouTube, TikTok, Instagram and Facebook in seconds, without registration and without installing software. Just paste a link to get an MP4 file in high quality with audio included." },
+        { h:"Why choose our tool?", p:"Most online download tools suffer from the same problem: they give you the video without audio for high qualities, or redirect you through pages of ads before failing. Our approach is different:", ul:["Audio always included: Our server automatically merges the video and audio track into a single MP4 file, even for 1080p and 4K resolutions that require a technical merge.","TikTok without watermark: We download the original source without the @username watermark.","4 platforms in one tool: No need to juggle multiple sites.","Actively maintained engine: Powered by yt-dlp, regularly updated by the open-source community."] },
+        { h:"Which quality should I choose?", p:"For mobile viewing, 720p is more than enough and saves space. For a large screen, 1080p Full HD is the right balance. 4K Ultra HD is ideal for archiving or watching on a 4K display. For TikTok and Instagram, the platform usually offers the best available quality directly." },
+        { h:"Is it legal?", p:"Downloading videos for strictly personal use is generally tolerated in the vast majority of countries. The golden rule is simple: you can save content for yourself, but you cannot redistribute or monetise copyrighted content without the creator's explicit permission. Always respect creators' work." },
+      ],
+    },
+    faq: {
+      heading: "Frequently Asked Questions",
+      sub: "Everything you need to know about DownloadAllInOne.",
+      items: [
+        { q:"How do I download a YouTube, TikTok, Instagram or Facebook video?",      a:"Copy the video URL from the platform, paste it in the field above, click Analyze, choose the quality and download. That's it — no sign-up, no software." },
+        { q:"Is DownloadAllInOne free?",                                               a:"Yes, completely free and unlimited. No subscription, no quota, no intrusive ads. Download as many videos as you want." },
+        { q:"Can I download TikTok videos without a watermark?",                      a:"Yes. Our tool downloads the original video without the @username watermark that TikTok adds when downloading via the official app." },
+        { q:"What qualities are available?",                                           a:"Depending on the video and platform: 360p, 480p, 720p HD, 1080p Full HD, 1440p and 4K Ultra HD for YouTube. TikTok and Instagram generally offer the best available quality in a single format." },
+        { q:"Is audio included in the download?",                                      a:"Yes, always. Our server automatically merges the video and audio into a single MP4 file. You don't have to do anything else." },
+        { q:"Can I download private videos?",                                          a:"No. Our tool can only access public content. Private videos, password-protected or subscriber-only content cannot be downloaded." },
+        { q:"Does it work on iPhone and Android?",                                     a:"Yes, DownloadAllInOne works on all mobile browsers (Safari, Chrome, Firefox). The video downloads directly to your device." },
+        { q:"Is it legal to download videos?",                                         a:"Downloading for personal and private use is generally tolerated in most countries. Redistributing or monetising copyrighted content without permission is prohibited." },
+      ],
+    },
+    footer: {
+      tagline: "The free video downloader for YouTube, TikTok, Instagram and Facebook. High quality, audio included, no sign-up.",
+      built: "Powered by yt-dlp & ffmpeg",
+      cols: [
+        { title:"Platforms",     links:[{l:"YouTube Downloader",h:"/youtube-downloader"},{l:"TikTok Downloader",h:"/tiktok-downloader"},{l:"Instagram Downloader",h:"/instagram-downloader"},{l:"Facebook Downloader",h:"/facebook-downloader"}] },
+        { title:"Features",      links:[{l:"4K Download",h:"/#features"},{l:"No TikTok watermark",h:"/#features"},{l:"Audio included",h:"/#features"},{l:"Free & unlimited",h:"/#features"}] },
+        { title:"Resources",     links:[{l:"FAQ",h:"/#faq"},{l:"How it works",h:"/#how"},{l:"Full guide",h:"/#article"}] },
+      ],
+      copy: "© 2026 DownloadAllInOne — All rights reserved",
+      terms: "Terms of use",
+      privacy: "Privacy policy",
+    },
+    errors: {
+      network: "Network error — please try again.",
+      private: "This video is private or inaccessible.",
+      notVideo: "The link does not point to a video.",
+      generic: "Unable to fetch the video.",
+    },
+  },
+
+  // ─────────────────────────────────────────────
+  fr: {
+    dir: "ltr",
+    nav: {
+      logo: "DownloadAllInOne",
+      youtube: "YouTube",
+      tiktok: "TikTok",
+      instagram: "Instagram",
+      facebook: "Facebook",
+    },
+    hero: {
+      badge: "Téléchargeur vidéo gratuit · Sans inscription",
+      title: ["Télécharge", "n'importe quelle", "vidéo"],
+      sub: "YouTube, TikTok, Instagram, Facebook — en HD, 1080p ou 4K avec audio. Colle le lien, choisis la qualité, c'est dans ta poche.",
+    },
+    stats: [
+      { v: "4",    l: "Plateformes"  },
+      { v: "4K",   l: "Qualité max"  },
+      { v: "100%", l: "Gratuit"      },
+      { v: "0",    l: "Inscription"  },
+    ],
+    tool: {
+      sectionLabel: "Choisir la plateforme",
+      inputLabel: "Lien de la vidéo",
+      analyzeBtn: "Analyser",
+      analyzingBtn: "…",
+      loadingText: "Récupération des formats…",
+      qualityLabel: "Choisir la qualité",
+      downloadBtn: (q: string) => `↓ Télécharger en ${q} (vidéo + audio)`,
+      errorPrivate: "💡 Seules les vidéos <strong>publiques</strong> peuvent être téléchargées.",
+    },
+    platforms: [
+      { badge: "4K · HD · MP4",     longdesc: "Télécharge toutes les vidéos YouTube en HD, 1080p Full HD ou 4K Ultra HD avec audio fusionné. Supporte les Shorts YouTube.",                            tags: ["4K Ultra HD","1080p Full HD","720p HD","Audio inclus","Shorts"],      cta: "Voir la page dédiée →" },
+      { badge: "Sans filigrane",    longdesc: "Télécharge les vidéos TikTok sans filigrane en haute qualité. Idéal pour sauvegarder tes créations ou celles que tu aimes.",                          tags: ["Sans filigrane","HD","Son original","Mobile friendly"],               cta: "Voir la page dédiée →" },
+      { badge: "Reels · IGTV",      longdesc: "Télécharge les Reels Instagram, les vidéos classiques et les IGTV en HD directement depuis ton navigateur.",                                          tags: ["Reels","IGTV","Vidéos","HD","Son inclus"],                            cta: "Voir la page dédiée →" },
+      { badge: "Vidéos · Reels",    longdesc: "Télécharge les vidéos Facebook publiques, les Reels Facebook et les rediffusions de Lives en SD ou HD.",                                             tags: ["Vidéos","Reels","Lives","SD & HD"],                                   cta: "Voir la page dédiée →" },
+    ],
+    how: {
+      heading: "Comment ça fonctionne ?",
+      sub: "4 étapes simples pour télécharger n'importe quelle vidéo en moins d'une minute.",
+      steps: [
+        { n:"01", title:"Copie le lien",      desc:"Va sur YouTube, TikTok, Instagram ou Facebook. Ouvre la vidéo et copie son URL depuis la barre d'adresse ou le bouton Partager." },
+        { n:"02", title:"Colle et analyse",   desc:"Reviens ici, colle le lien dans le champ ci-dessus et clique sur Analyser. La plateforme est détectée automatiquement." },
+        { n:"03", title:"Choisis la qualité", desc:"Sélectionne la résolution souhaitée parmi toutes les qualités disponibles : 720p, 1080p, 4K selon la vidéo." },
+        { n:"04", title:"Télécharge",         desc:"Clique sur Télécharger. Le fichier MP4 avec audio se sauvegarde directement sur ton appareil en quelques secondes." },
+      ],
+    },
+    features: {
+      heading: "Tout ce dont tu as besoin",
+      sub: "Un outil simple, rapide et complet pour télécharger des vidéos depuis les 4 grandes plateformes.",
+      items: [
+        { icon:"🎬", title:"Jusqu'à 4K Ultra HD",       desc:"Télécharge en 360p, 720p HD, 1080p Full HD ou 4K selon la qualité d'origine. Le meilleur format est proposé automatiquement." },
+        { icon:"🔊", title:"Vidéo + Audio fusionnés",   desc:"Chaque téléchargement inclut la piste audio synchronisée. Fini les vidéos muettes ou les fichiers séparés à assembler." },
+        { icon:"🚫", title:"TikTok sans filigrane",     desc:"Supprime automatiquement le filigrane @username de TikTok pour obtenir une vidéo propre, prête à partager." },
+        { icon:"⚡", title:"Analyse en 5 secondes",     desc:"Notre infrastructure dédiée récupère les métadonnées et formats disponibles en quelques secondes, sans attente." },
+        { icon:"📱", title:"Tous appareils",            desc:"Fonctionne sur iPhone, Android, Mac, Windows et Linux directement depuis le navigateur. Aucune application à installer." },
+        { icon:"🔒", title:"100% privé",               desc:"Aucun compte requis, aucune donnée stockée. Tes téléchargements restent entre toi et ton appareil." },
+        { icon:"🌐", title:"4 plateformes",            desc:"YouTube, TikTok, Instagram et Facebook dans un seul outil. Colle n'importe quel lien et on s'occupe du reste." },
+        { icon:"💯", title:"Gratuit sans limite",       desc:"Aucun abonnement, aucun quota. Télécharge autant de vidéos que tu veux, gratuitement, pour toujours." },
+      ],
+    },
+    platformsDetail: {
+      heading: "Pages dédiées par plateforme",
+      sub: "Chaque plateforme a sa page spécialisée avec guide complet et options optimisées.",
+    },
+    article: {
+      heading: "Guide complet — Télécharger des vidéos en 2026",
+      blocks: [
+        { h:"Qu'est-ce que DownloadAllInOne ?", p:"DownloadAllInOne est un outil en ligne gratuit qui permet de télécharger des vidéos depuis YouTube, TikTok, Instagram et Facebook en quelques secondes, sans inscription et sans logiciel à installer. Il suffit de coller un lien pour obtenir un fichier MP4 en haute qualité avec audio inclus." },
+        { h:"Pourquoi choisir notre outil ?", p:"La plupart des outils souffrent du même problème : ils proposent la vidéo sans audio pour les hautes qualités, ou te redirigent vers des pages de publicités avant d'échouer. Notre approche est différente :", ul:["Audio toujours inclus : Notre serveur fusionne automatiquement vidéo et audio en un seul fichier MP4, même pour les résolutions 1080p et 4K.","TikTok sans filigrane : On télécharge la source originale sans le filigrane @username.","4 plateformes dans un seul outil : Inutile de jongler entre plusieurs sites.","Moteur maintenu activement : Propulsé par yt-dlp, mis à jour régulièrement par la communauté open-source."] },
+        { h:"Quelle qualité choisir ?", p:"Pour regarder sur mobile, 720p est largement suffisant. Pour un grand écran, 1080p Full HD est le bon compromis. La 4K Ultra HD est idéale pour archiver ou visionner sur un écran 4K. Pour TikTok et Instagram, la plateforme propose généralement la meilleure qualité disponible directement." },
+        { h:"Est-ce légal ?", p:"Télécharger des vidéos pour un usage strictement personnel est généralement toléré dans la grande majorité des pays. La règle d'or : tu peux sauvegarder du contenu pour toi, mais tu ne peux pas redistribuer ou monétiser du contenu protégé par droits d'auteur sans autorisation explicite du créateur." },
+      ],
+    },
+    faq: {
+      heading: "Questions fréquentes",
+      sub: "Tout ce que tu dois savoir sur DownloadAllInOne.",
+      items: [
+        { q:"Comment télécharger une vidéo YouTube, TikTok, Instagram ou Facebook ?",  a:"Copie l'URL de la vidéo depuis la plateforme, colle-la dans le champ ci-dessus, clique sur Analyser, choisis la qualité et télécharge. C'est tout — aucune inscription, aucun logiciel." },
+        { q:"Est-ce que DownloadAllInOne est gratuit ?",                               a:"Oui, totalement gratuit et sans limite. Pas d'abonnement, pas de quota, pas de pub intrusive." },
+        { q:"Peut-on télécharger des vidéos TikTok sans filigrane ?",                  a:"Oui. Notre outil télécharge la vidéo originale sans le filigrane @username que TikTok ajoute lors du téléchargement via l'application officielle." },
+        { q:"Quelles qualités sont disponibles ?",                                      a:"Selon la vidéo et la plateforme : 360p, 480p, 720p HD, 1080p Full HD, 1440p et 4K Ultra HD pour YouTube. TikTok et Instagram proposent généralement la meilleure qualité disponible en un seul format." },
+        { q:"L'audio est-il inclus dans le téléchargement ?",                          a:"Oui, toujours. Notre serveur fusionne automatiquement la piste vidéo et audio en un seul fichier MP4. Tu n'as rien à faire de plus." },
+        { q:"Peut-on télécharger des vidéos privées ?",                                a:"Non. Notre outil ne peut accéder qu'aux contenus publics. Les vidéos privées, protégées par mot de passe ou réservées aux abonnés ne peuvent pas être téléchargées." },
+        { q:"Ça fonctionne sur iPhone et Android ?",                                   a:"Oui, DownloadAllInOne fonctionne sur tous les navigateurs mobiles (Safari, Chrome, Firefox). La vidéo se télécharge directement sur ton appareil." },
+        { q:"Est-ce légal de télécharger des vidéos ?",                                a:"Télécharger pour un usage personnel est généralement toléré dans la plupart des pays. Il est interdit de redistribuer ou monétiser du contenu protégé par droits d'auteur sans autorisation." },
+      ],
+    },
+    footer: {
+      tagline: "Le téléchargeur vidéo gratuit pour YouTube, TikTok, Instagram et Facebook. Haute qualité, audio inclus, sans inscription.",
+      built: "Propulsé par yt-dlp & ffmpeg",
+      cols: [
+        { title:"Plateformes",   links:[{l:"YouTube Downloader",h:"/youtube-downloader"},{l:"TikTok Downloader",h:"/tiktok-downloader"},{l:"Instagram Downloader",h:"/instagram-downloader"},{l:"Facebook Downloader",h:"/facebook-downloader"}] },
+        { title:"Fonctionnalités", links:[{l:"Téléchargement 4K",h:"/#features"},{l:"Sans filigrane TikTok",h:"/#features"},{l:"Audio inclus",h:"/#features"},{l:"Gratuit & illimité",h:"/#features"}] },
+        { title:"Ressources",    links:[{l:"FAQ",h:"/#faq"},{l:"Comment ça marche",h:"/#how"},{l:"Guide complet",h:"/#article"}] },
+      ],
+      copy: "© 2026 DownloadAllInOne — Tous droits réservés",
+      terms: "Conditions d'utilisation",
+      privacy: "Politique de confidentialité",
+    },
+    errors: {
+      network: "Erreur réseau — réessaie.",
+      private: "Cette vidéo est privée ou inaccessible.",
+      notVideo: "Le lien ne pointe pas vers une vidéo.",
+      generic: "Impossible de récupérer la vidéo.",
+    },
+  },
+
+  // ─────────────────────────────────────────────
+  ar: {
+    dir: "rtl",
+    nav: {
+      logo: "DownloadAllInOne",
+      youtube: "يوتيوب",
+      tiktok: "تيك توك",
+      instagram: "إنستغرام",
+      facebook: "فيسبوك",
+    },
+    hero: {
+      badge: "تحميل مجاني · بدون تسجيل",
+      title: ["حمّل", "أي فيديو,", "في أي مكان"],
+      sub: "يوتيوب، تيك توك، إنستغرام، فيسبوك — بدقة HD أو 1080p أو 4K مع الصوت. الصق الرابط، اختر الجودة، خلاص.",
+    },
+    stats: [
+      { v: "4",    l: "منصات"       },
+      { v: "4K",   l: "أعلى جودة"   },
+      { v: "100%", l: "مجاني"       },
+      { v: "0",    l: "تسجيل"       },
+    ],
+    tool: {
+      sectionLabel: "اختر المنصة",
+      inputLabel: "رابط الفيديو",
+      analyzeBtn: "تحليل",
+      analyzingBtn: "…",
+      loadingText: "جارٍ جلب الصيغ…",
+      qualityLabel: "اختر الجودة",
+      downloadBtn: (q: string) => `↓ تحميل بجودة ${q} (فيديو + صوت)`,
+      errorPrivate: "💡 يمكن تحميل الفيديوهات <strong>العامة</strong> فقط.",
+    },
+    platforms: [
+      { badge: "4K · HD · MP4",      longdesc: "حمّل أي فيديو من يوتيوب بجودة HD أو 1080p أو 4K مع دمج الصوت تلقائياً. يدعم YouTube Shorts.",                              tags: ["4K Ultra HD","1080p Full HD","720p HD","صوت مدمج","Shorts"],        cta: "الصفحة المخصصة ←" },
+      { badge: "بدون علامة مائية",   longdesc: "حمّل فيديوهات تيك توك بدون العلامة المائية @username بجودة عالية. مثالي لحفظ مقاطعك المفضلة.",                               tags: ["بدون علامة مائية","HD","الصوت الأصلي","متوافق مع الجوال"],           cta: "الصفحة المخصصة ←" },
+      { badge: "ريلز · IGTV",        longdesc: "حمّل ريلز إنستغرام والفيديوهات العادية وIGTV بجودة HD مباشرة من المتصفح.",                                                    tags: ["Reels","IGTV","فيديوهات","HD","صوت مدمج"],                          cta: "الصفحة المخصصة ←" },
+      { badge: "فيديوهات · ريلز",    longdesc: "حمّل فيديوهات فيسبوك العامة وريلز فيسبوك وإعادة البث المباشر بجودة SD أو HD.",                                               tags: ["فيديوهات","Reels","بث مباشر","SD & HD"],                            cta: "الصفحة المخصصة ←" },
+    ],
+    how: {
+      heading: "كيف يعمل؟",
+      sub: "٤ خطوات بسيطة لتحميل أي فيديو في أقل من دقيقة.",
+      steps: [
+        { n:"٠١", title:"انسخ الرابط",       desc:"اذهب إلى يوتيوب أو تيك توك أو إنستغرام أو فيسبوك. افتح الفيديو وانسخ رابطه من شريط العنوان أو زر المشاركة." },
+        { n:"٠٢", title:"الصق وحلّل",        desc:"عد هنا، الصق الرابط في الحقل أعلاه واضغط تحليل. يتم الكشف عن المنصة تلقائياً." },
+        { n:"٠٣", title:"اختر الجودة",        desc:"اختر الدقة التي تريدها من جميع الجودات المتاحة: 720p أو 1080p أو 4K حسب الفيديو." },
+        { n:"٠٤", title:"حمّل",              desc:"اضغط تحميل. يُحفظ ملف MP4 مع الصوت مباشرةً على جهازك في ثوانٍ." },
+      ],
+    },
+    features: {
+      heading: "كل ما تحتاجه",
+      sub: "أداة بسيطة وسريعة وشاملة لتحميل الفيديوهات من المنصات الأربع الكبرى.",
+      items: [
+        { icon:"🎬", title:"حتى 4K Ultra HD",         desc:"حمّل بجودة 360p أو 720p أو 1080p أو 4K حسب الجودة الأصلية. يُقترح أفضل صيغة تلقائياً." },
+        { icon:"🔊", title:"فيديو + صوت مدمج",       desc:"كل تحميل يتضمن المسار الصوتي المتزامن. لا مزيد من الفيديوهات الصامتة أو الملفات المنفصلة." },
+        { icon:"🚫", title:"تيك توك بدون علامة مائية",desc:"يزيل تلقائياً علامة @username المائية من تيك توك للحصول على فيديو نظيف جاهز للمشاركة." },
+        { icon:"⚡", title:"تحليل في 5 ثوانٍ",       desc:"تجلب البنية التحتية لدينا البيانات والصيغ المتاحة في ثوانٍ بدون انتظار." },
+        { icon:"📱", title:"جميع الأجهزة",           desc:"يعمل على iPhone وAndroid وMac وWindows وLinux مباشرةً من المتصفح. لا حاجة لتثبيت أي تطبيق." },
+        { icon:"🔒", title:"خصوصية 100%",           desc:"لا حساب مطلوب، لا بيانات محفوظة. تحميلاتك تبقى بينك وبين جهازك." },
+        { icon:"🌐", title:"٤ منصات",               desc:"يوتيوب وتيك توك وإنستغرام وفيسبوك في أداة واحدة. الصق أي رابط ونحن نتكفل بالباقي." },
+        { icon:"💯", title:"مجاني وبلا حدود",        desc:"لا اشتراك، لا حصص. حمّل كل الفيديوهات التي تريدها مجاناً وإلى الأبد." },
+      ],
+    },
+    platformsDetail: {
+      heading: "صفحات مخصصة لكل منصة",
+      sub: "لكل منصة صفحتها المتخصصة مع دليل كامل وخيارات محسّنة.",
+    },
+    article: {
+      heading: "دليل شامل — تحميل الفيديوهات في 2026",
+      blocks: [
+        { h:"ما هو DownloadAllInOne؟", p:"DownloadAllInOne هو أداة مجانية على الإنترنت تتيح لك تحميل الفيديوهات من يوتيوب وتيك توك وإنستغرام وفيسبوك في ثوانٍ، بدون تسجيل وبدون تثبيت أي برنامج. فقط الصق رابطاً للحصول على ملف MP4 بجودة عالية مع الصوت مدمج." },
+        { h:"لماذا تختار أداتنا؟", p:"معظم أدوات التحميل تعاني من نفس المشكلة: تعطيك الفيديو بدون صوت للجودات العالية، أو تعيد توجيهك عبر صفحات إعلانات قبل الفشل. نهجنا مختلف:", ul:["الصوت مدمج دائماً: يدمج خادمنا تلقائياً مسار الفيديو والصوت في ملف MP4 واحد، حتى لدقة 1080p و4K.","تيك توك بدون علامة مائية: نحمّل المصدر الأصلي بدون علامة @username المائية.","٤ منصات في أداة واحدة: لا حاجة للتنقل بين مواقع متعددة.","محرك يُحدَّث باستمرار: مدعوم بـ yt-dlp، يُحدَّث بانتظام من مجتمع المصادر المفتوحة."] },
+        { h:"أي جودة أختار؟", p:"للمشاهدة على الجوال، 720p أكثر من كافٍ ويوفر المساحة. للشاشة الكبيرة، 1080p Full HD هو التوازن الصحيح. 4K Ultra HD مثالي للأرشفة أو المشاهدة على شاشة 4K. بالنسبة لتيك توك وإنستغرام، توفر المنصة عادةً أفضل جودة متاحة مباشرةً." },
+        { h:"هل هو قانوني؟", p:"تحميل الفيديوهات للاستخدام الشخصي البحت مسموح به عموماً في الغالبية العظمى من الدول. القاعدة الذهبية بسيطة: يمكنك حفظ المحتوى لنفسك، لكن لا يمكنك إعادة توزيع المحتوى المحمي بحقوق النشر أو كسب المال منه بدون إذن صريح من المبدع." },
+      ],
+    },
+    faq: {
+      heading: "الأسئلة الشائعة",
+      sub: "كل ما تحتاج معرفته عن DownloadAllInOne.",
+      items: [
+        { q:"كيف أحمّل فيديو من يوتيوب أو تيك توك أو إنستغرام أو فيسبوك؟",        a:"انسخ رابط الفيديو من المنصة، الصقه في الحقل أعلاه، اضغط تحليل، اختر الجودة وحمّل. هذا كل شيء — بدون تسجيل، بدون برنامج." },
+        { q:"هل DownloadAllInOne مجاني؟",                                            a:"نعم، مجاني تماماً وبلا قيود. لا اشتراك، لا حصص، لا إعلانات مزعجة. حمّل كل الفيديوهات التي تريدها." },
+        { q:"هل يمكن تحميل فيديوهات تيك توك بدون علامة مائية؟",                   a:"نعم. أداتنا تحمّل الفيديو الأصلي بدون علامة @username المائية التي يضيفها تيك توك عند التحميل عبر التطبيق الرسمي." },
+        { q:"ما الجودات المتاحة؟",                                                   a:"حسب الفيديو والمنصة: 360p و480p و720p HD و1080p Full HD و1440p و4K Ultra HD ليوتيوب. تيك توك وإنستغرام يوفران عادةً أفضل جودة متاحة في صيغة واحدة." },
+        { q:"هل الصوت مدمج في التحميل؟",                                            a:"نعم، دائماً. يدمج خادمنا تلقائياً مسار الفيديو والصوت في ملف MP4 واحد. لا تحتاج لفعل أي شيء إضافي." },
+        { q:"هل يمكن تحميل الفيديوهات الخاصة؟",                                    a:"لا. أداتنا تتمكن فقط من الوصول إلى المحتوى العام. الفيديوهات الخاصة أو المحمية بكلمة مرور أو المخصصة للمشتركين لا يمكن تحميلها." },
+        { q:"هل تعمل على iPhone وAndroid؟",                                         a:"نعم، DownloadAllInOne يعمل على جميع متصفحات الجوال (Safari وChrome وFirefox). يُحمَّل الفيديو مباشرةً على جهازك." },
+        { q:"هل تحميل الفيديوهات قانوني؟",                                          a:"التحميل للاستخدام الشخصي والخاص مسموح به عموماً في معظم الدول. إعادة توزيع المحتوى المحمي بحقوق النشر أو كسب المال منه بدون إذن أمر محظور." },
+      ],
+    },
+    footer: {
+      tagline: "محمّل الفيديو المجاني من يوتيوب وتيك توك وإنستغرام وفيسبوك. جودة عالية، صوت مدمج، بدون تسجيل.",
+      built: "مدعوم بـ yt-dlp و ffmpeg",
+      cols: [
+        { title:"المنصات",        links:[{l:"تحميل يوتيوب",h:"/youtube-downloader"},{l:"تحميل تيك توك",h:"/tiktok-downloader"},{l:"تحميل إنستغرام",h:"/instagram-downloader"},{l:"تحميل فيسبوك",h:"/facebook-downloader"}] },
+        { title:"المميزات",       links:[{l:"تحميل 4K",h:"/#features"},{l:"بدون علامة تيك توك",h:"/#features"},{l:"صوت مدمج",h:"/#features"},{l:"مجاني وبلا حدود",h:"/#features"}] },
+        { title:"الموارد",        links:[{l:"الأسئلة الشائعة",h:"/#faq"},{l:"كيف يعمل",h:"/#how"},{l:"دليل شامل",h:"/#article"}] },
+      ],
+      copy: "© 2026 DownloadAllInOne — جميع الحقوق محفوظة",
+      terms: "شروط الاستخدام",
+      privacy: "سياسة الخصوصية",
+    },
+    errors: {
+      network: "خطأ في الشبكة — حاول مرة أخرى.",
+      private: "هذا الفيديو خاص أو غير متاح.",
+      notVideo: "الرابط لا يشير إلى فيديو.",
+      generic: "تعذّر جلب الفيديو.",
+    },
+  },
+} as const
+
+export type Translations = (typeof translations)["en"]
