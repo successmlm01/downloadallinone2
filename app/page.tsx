@@ -8,7 +8,7 @@ const BACKEND_URL =
   process.env.NEXT_PUBLIC_API_URL ||
   "https://downloader-server-production-3252.up.railway.app"
 
-type Quality = { label: string; height: number; formatId: string; filesize: number | null; needsMerge?: boolean }
+type Quality = { label: string; height: number; formatId: string; audioId?: string | null; filesize: number | null; needsMerge?: boolean }
 type VideoInfo = { title?: string; thumbnail?: string; duration?: number; uploader?: string; originalUrl?: string; qualities?: Quality[]; error?: string }
 
 function formatDuration(s: number) { const m = Math.floor(s/60); return `${m}:${(s%60).toString().padStart(2,"0")}` }
@@ -63,8 +63,14 @@ export default function Home() {
   }
   function getDownloadUrl() {
     if (!selected || !info?.originalUrl) return "#"
-    const p = new URLSearchParams({ url:info.originalUrl, formatId:selected.formatId, title:info.title||"video", needsMerge:String(selected.needsMerge??true) })
-    return `${BACKEND_URL}/stream?${p}`
+    const params: Record<string, string> = {
+      url:        info.originalUrl,
+      formatId:   selected.formatId,
+      title:      info.title || "video",
+      needsMerge: String(selected.needsMerge ?? true),
+    }
+    if (selected.audioId) params.audioId = selected.audioId
+    return `${BACKEND_URL}/stream?${new URLSearchParams(params)}`
   }
 
   function changeLang(l: Lang) {
